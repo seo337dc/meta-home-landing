@@ -1,8 +1,8 @@
-"use client"; // 클라이언트 컴포넌트로 설정
+"use client";
 
-import { Colors, Fonts } from "@/common/constant";
 import React from "react";
 import { createGlobalStyle } from "styled-components";
+import { Colors, Fonts } from "@/common/constant";
 
 const GlobalStyle = createGlobalStyle`
  html,body {
@@ -82,7 +82,6 @@ export default function GlobalStyleWrapper({
 }: {
   children: React.ReactNode;
 }) {
-  console.log("???");
   return (
     <>
       <GlobalStyle />

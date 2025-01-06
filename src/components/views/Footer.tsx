@@ -76,21 +76,6 @@ const Wrap = styled.div`
   justify-content: flex-end;
   align-items: center;
   gap: 8.43vw; //  162px;
-  background: linear-gradient(
-      0deg,
-      rgba(44, 44, 54, 0.43) 0%,
-      rgba(44, 44, 54, 0.43) 100%
-    ),
-    url("/footer.jpg") lightgray -38px -225px / 103.75% 210.671% no-repeat;
-
-  @media screen and (max-width: 1024px) {
-    background: linear-gradient(
-        0deg,
-        rgba(44, 44, 54, 0.43) 0%,
-        rgba(44, 44, 54, 0.43) 100%
-      ),
-      url("/footer_m.jpg") lightgray 50% / cover no-repeat;
-  }
 `;
 
 const BackgroundImg = styled.img`

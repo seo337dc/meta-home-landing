@@ -5,9 +5,9 @@ import useDeviceSize from "@/hooks/useDetectDeviceSize";
 import { styled } from "styled-components";
 import { useAtom } from "jotai";
 import { Lang, langAtom } from "@/store/langStore";
+import Section from "../common/Section";
 const Introduce = () => {
   const [lang] = useAtom(langAtom);
-  const { isDesktop } = useDeviceSize();
 
   const obj: Record<
     Lang,
@@ -45,36 +45,34 @@ const Introduce = () => {
   };
 
   return (
-    <Wrap>
-      <ItroduceImg
-        src={isDesktop ? "/introduce.png" : "/main_m.jpg"}
-        alt="introduce"
-      />
-      <ContentContainer>
-        <TextTitle $isKor={lang === Lang.KOR}>
-          {lang === Lang.KOR && (
-            <>
-              RWA 프로젝트 평가와 전문성 있는 투자 가이드,{" "}
-              <span className="blue">UniqueAsset</span> 시작하세요.
-            </>
-          )}
+    <Section id="">
+      <Wrap>
+        <ContentContainer>
+          <TextTitle $isKor={lang === Lang.KOR}>
+            {lang === Lang.KOR && (
+              <>
+                RWA 프로젝트 평가와 전문성 있는 투자 가이드,{" "}
+                <span className="blue">UniqueAsset</span> 시작하세요.
+              </>
+            )}
 
-          {lang === Lang.ENG && (
-            <>
-              Start your RWA project evaluation and expert investment guidance
-              with the <span className="blue">UniqueAsset</span> platform
-            </>
-          )}
-        </TextTitle>
+            {lang === Lang.ENG && (
+              <>
+                Start your RWA project evaluation and expert investment guidance
+                with the <span className="blue">UniqueAsset</span> platform
+              </>
+            )}
+          </TextTitle>
 
-        <TextSub>{obj[lang].description}</TextSub>
+          <TextSub>{obj[lang].description}</TextSub>
 
-        <MoreViewBtn>
-          <span>{obj[lang].button}</span>
-          <RightArrow src="/right_icon.png" alt="right_icon" />
-        </MoreViewBtn>
-      </ContentContainer>
-    </Wrap>
+          <MoreViewBtn>
+            <span>{obj[lang].button}</span>
+            <RightArrow src="/right_icon.png" alt="right_icon" />
+          </MoreViewBtn>
+        </ContentContainer>
+      </Wrap>
+    </Section>
   );
 };
 
@@ -83,23 +81,7 @@ export default Introduce;
 const Wrap = styled.section`
   position: relative;
   width: 100%;
-  height: 50.52wv;
-  background: url("/introduce.png") lightgray 0% 0% / 100px 100px repeat;
-
-  @media screen and (max-width: 1024px) {
-    background: url("/introduce.png") lightgray -170.579px 15.025px / 185.642% 63.899%
-        no-repeat,
-      #000;
-  }
-`;
-
-const ItroduceImg = styled.img`
-  width: 100%;
-  height: 50.52wv;
-
-  @media screen and (max-width: 1024px) {
-    height: 779px;
-  }
+  height: 50.52vw;
 `;
 
 const ContentContainer = styled.div`
